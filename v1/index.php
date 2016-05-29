@@ -43,14 +43,6 @@ $app->post('/brand/add', function() use ($app) {
 });
 
 
-// Insert Brand
-$app->get('/brand/', function() use ($app) {
-
-    $db = new DbHandler();
-    $response = $db->getAllBrand();
-    echoResponse(200, $response);
-});
-
 // All Category
 $app->get('/category/', function() use ($app) {
 
@@ -58,6 +50,29 @@ $app->get('/category/', function() use ($app) {
     $response = $db->getAllCategory();
     echoResponse(200, $response);
 });
+
+
+// Insert Category
+$app->post('/category/add', function() use ($app) {
+
+    verifyRequiredParams(array('description'));
+
+    $description = $app->request->post('description');
+
+    $db = new DbHandler();
+    $response = $db->addCategory($description);
+    echoResponse(200, $response);
+});
+
+
+// Category by Id
+$app->get('/category/:id', function($id) use ($app) {
+
+    $db = new DbHandler();
+    $response = $db->getCategoryById($id);
+    echoResponse(200, $response);
+});
+
 
 
 // All Product
@@ -69,22 +84,53 @@ $app->get('/product/', function() use ($app) {
 });
 
 
-
-// Place By Description
-$app->get('/place/:description', function($description) use ($app) {
+// Product by Id
+$app->get('/product/:id', function($id) use ($app) {
 
     $db = new DbHandler();
-    $response = $db->getPlaceByDescription($description);
+    $response = $db->getProductById($id);
     echoResponse(200, $response);
 });
 
-// All Places
-$app->get('/place/', function() use ($app) {
+
+// Product by category_id
+$app->get('/category/:id/product/', function($id) use ($app) {
 
     $db = new DbHandler();
-    $response = $db->getAllPlace();
+    $response = $db->getProductByCategoryId($id);
     echoResponse(200, $response);
 });
+
+
+// Product by brand_id
+$app->get('/brand/:id/product/', function($id) use ($app) {
+
+    $db = new DbHandler();
+    $response = $db->getProductByBrandId($id);
+    echoResponse(200, $response);
+});
+
+
+//Insert Product
+$app->post('/product/add', function() use ($app) {
+
+    verifyRequiredParams(array('description', 'price', 'brand_id', 'category_id', 'latitude', 'longitude', 'image'));
+
+    $description = $app->request->post('description');
+    $price = $app->request->post('price');
+    $brand_id = $app->request->post('brand_id');
+    $category_id = $app->request->post('category_id');
+    $latitude = $app->request->post('latitude');
+    $longitude = $app->request->post('longitude');
+    $image = $app->request->post('image');
+
+    $db = new DbHandler();
+    $response = $db->addProduct($description, $price, $brand_id, $category_id, $latitude, $longitude, $image);
+
+    echoResponse(200, $response);
+});
+
+
 
 function echoResponse($status_code, $response) {
     $app = \Slim\Slim::getInstance();

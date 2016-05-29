@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6af8cf17-e787-431e-ac2e-affb36099858" name="Default" comment="" />
+    <list default="true" id="6af8cf17-e787-431e-ac2e-affb36099858" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/db_handler.php" afterPath="$PROJECT_DIR$/include/db_handler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v1/index.php" afterPath="$PROJECT_DIR$/v1/index.php" />
+    </list>
     <ignored path="apiEcommerce.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -32,17 +37,21 @@
       <file leaf-file-name="db_handler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/db_handler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1215">
-              <caret line="81" column="34" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+            <state relative-caret-position="315">
+              <caret line="410" column="38" selection-start-line="410" selection-start-column="38" selection-end-line="410" selection-end-column="38" />
               <folding>
-                <marker date="1464558161000" expanded="true" signature="333:372" ph="SELECT brand... brand" />
-                <marker date="1464558161000" expanded="true" signature="1370:1410" ph="INSERT INTO brand... " />
-                <marker date="1464558161000" expanded="true" signature="2083:2141" ph="SELECT brand... brand" />
-                <marker date="1464558161000" expanded="true" signature="3173:3218" ph="SELECT categ... category" />
-                <marker date="1464558161000" expanded="true" signature="4228:4271" ph="INSERT INTO category... " />
-                <marker date="1464558161000" expanded="true" signature="4943:5045" ph="SELECT produ... product" />
-                <marker date="1464558161000" expanded="true" signature="6495:6589" ph="SELECT place... place" />
-                <marker date="1464558161000" expanded="true" signature="7578:7617" ph="SELECT place... place" />
+                <marker date="1464560353000" expanded="true" signature="333:372" ph="SELECT brand... brand" />
+                <marker date="1464560353000" expanded="true" signature="1370:1410" ph="INSERT INTO brand... " />
+                <marker date="1464560353000" expanded="true" signature="2083:2141" ph="SELECT brand... brand" />
+                <marker date="1464560353000" expanded="true" signature="3173:3218" ph="SELECT categ... category" />
+                <marker date="1464560353000" expanded="true" signature="4228:4271" ph="INSERT INTO category... " />
+                <marker date="1464560353000" expanded="true" signature="4954:5021" ph="SELECT brand... brand" />
+                <marker date="1464560353000" expanded="true" signature="6058:6160" ph="SELECT produ... product" />
+                <marker date="1464560353000" expanded="true" signature="7517:7640" ph="SELECT produ... product" />
+                <marker date="1464560353000" expanded="true" signature="7619:7640" ph="SELECT categ... category" />
+                <marker date="1464560353000" expanded="true" signature="9050:9174" ph="SELECT produ... product" />
+                <marker date="1464560353000" expanded="true" signature="10579:10700" ph="SELECT produ... product" />
+                <marker date="1464560353000" expanded="true" signature="12157:12276" ph="INSERT INTO product... " />
               </folding>
             </state>
           </provider>
@@ -51,8 +60,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+            <state relative-caret-position="390">
+              <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,13 +69,16 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/db/ecommerce_db.sql" />
         <option value="$PROJECT_DIR$/include/config.php" />
-        <option value="$PROJECT_DIR$/include/db_handler.php" />
         <option value="$PROJECT_DIR$/v1/index.php" />
+        <option value="$PROJECT_DIR$/include/db_handler.php" />
       </list>
     </option>
   </component>
@@ -82,14 +94,14 @@
     <option name="width" value="1280" />
     <option name="height" value="773" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -213,16 +225,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464554423000</updated>
-      <workItem from="1464554424964" duration="2962000" />
+      <workItem from="1464554424964" duration="4460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2962000" />
+    <option name="totallyTimeSpent" value="4460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2536349" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -230,7 +242,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -323,25 +335,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        <state relative-caret-position="390">
+          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/db_handler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="81" column="34" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+        <state relative-caret-position="315">
+          <caret line="410" column="38" selection-start-line="410" selection-start-column="38" selection-end-line="410" selection-end-column="38" />
           <folding>
-            <marker date="1464558161000" expanded="true" signature="333:372" ph="SELECT brand... brand" />
-            <marker date="1464558161000" expanded="true" signature="1370:1410" ph="INSERT INTO brand... " />
-            <marker date="1464558161000" expanded="true" signature="2083:2141" ph="SELECT brand... brand" />
-            <marker date="1464558161000" expanded="true" signature="3173:3218" ph="SELECT categ... category" />
-            <marker date="1464558161000" expanded="true" signature="4228:4271" ph="INSERT INTO category... " />
-            <marker date="1464558161000" expanded="true" signature="4943:5045" ph="SELECT produ... product" />
-            <marker date="1464558161000" expanded="true" signature="6495:6589" ph="SELECT place... place" />
-            <marker date="1464558161000" expanded="true" signature="7578:7617" ph="SELECT place... place" />
+            <marker date="1464560353000" expanded="true" signature="333:372" ph="SELECT brand... brand" />
+            <marker date="1464560353000" expanded="true" signature="1370:1410" ph="INSERT INTO brand... " />
+            <marker date="1464560353000" expanded="true" signature="2083:2141" ph="SELECT brand... brand" />
+            <marker date="1464560353000" expanded="true" signature="3173:3218" ph="SELECT categ... category" />
+            <marker date="1464560353000" expanded="true" signature="4228:4271" ph="INSERT INTO category... " />
+            <marker date="1464560353000" expanded="true" signature="4954:5021" ph="SELECT brand... brand" />
+            <marker date="1464560353000" expanded="true" signature="6058:6160" ph="SELECT produ... product" />
+            <marker date="1464560353000" expanded="true" signature="7517:7640" ph="SELECT produ... product" />
+            <marker date="1464560353000" expanded="true" signature="7619:7640" ph="SELECT categ... category" />
+            <marker date="1464560353000" expanded="true" signature="9050:9174" ph="SELECT produ... product" />
+            <marker date="1464560353000" expanded="true" signature="10579:10700" ph="SELECT produ... product" />
+            <marker date="1464560353000" expanded="true" signature="12157:12276" ph="INSERT INTO product... " />
           </folding>
         </state>
       </provider>
