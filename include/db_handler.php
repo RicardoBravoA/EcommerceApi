@@ -438,7 +438,31 @@ latitude, longitude, image) VALUES(?, ?, ?, ?, ?, ?, ?)");
         return $response;
     }
 
-    
+
+    // add User
+    public function addUser($name, $lastname, $surename, $email, $password) {
+        $response = array();
+
+        $stmt = $this->conn->prepare("INSERT INTO user(name, lastname, surename, email, password) VALUES(?, ?, ?, ?, md5(?))");
+        $stmt->bind_param("sssss", $name, $lastname, $surename, $email, $password);
+        $result = $stmt->execute();
+        $stmt->close();
+
+        if ($result) {
+            $meta = array();
+            $meta["status"] = "success";
+            $meta["code"] = "200";
+            $response["_meta"] = $meta;
+        } else {
+            $meta = array();
+            $meta["status"] = "error";
+            $meta["code"] = "100";
+            $response["_meta"] = $meta;
+        }
+
+        return $response;
+    }
+
 
 
 }
