@@ -230,10 +230,11 @@ class DbHandler {
 
         $response = array();
         $stmt = $this->conn->prepare("SELECT product_id, description, price, brand_id, category_id, latitude, 
-longitude, image from product");
+longitude, image, outstanding from product");
 
         if($stmt->execute()){
-            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude, $image);
+            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude,
+                $image, $outstanding);
             $stmt->store_result();
             if($stmt->num_rows>0){
                 $data = array();
@@ -247,6 +248,7 @@ longitude, image from product");
                     $tmp["latitude"] = $latitude;
                     $tmp["longitude"] = $longitude;
                     $tmp["image"] = $image;
+                    $tmp["outstanding"] = $outstanding;
                     array_push($data, $tmp);
                 }
                 $_meta = array();
@@ -277,10 +279,11 @@ longitude, image from product");
 
         $response = array();
         $stmt = $this->conn->prepare("SELECT product_id, description, price, brand_id, category_id, latitude, 
-longitude, image from product WHERE product_id = ?");
+longitude, image, outstanding from product WHERE product_id = ?");
         $stmt->bind_param("s", $id);
         if($stmt->execute()){
-            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude, $image);
+            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude,
+                $image, $outstanding);
             $stmt->store_result();
             if($stmt->num_rows>0){
                 $data = array();
@@ -294,6 +297,7 @@ longitude, image from product WHERE product_id = ?");
                     $tmp["latitude"] = $latitude;
                     $tmp["longitude"] = $longitude;
                     $tmp["image"] = $image;
+                    $tmp["outstanding"] = $outstanding;
                     array_push($data, $tmp);
                 }
                 $_meta = array();
@@ -323,10 +327,11 @@ longitude, image from product WHERE product_id = ?");
 
         $response = array();
         $stmt = $this->conn->prepare("SELECT product_id, description, price, brand_id, category_id, latitude, 
-longitude, image from product WHERE category_id = ?");
+longitude, image, outstanding from product WHERE category_id = ?");
         $stmt->bind_param("s", $id);
         if($stmt->execute()){
-            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude, $image);
+            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude,
+                $image, $outstanding);
             $stmt->store_result();
             if($stmt->num_rows>0){
                 $data = array();
@@ -340,6 +345,7 @@ longitude, image from product WHERE category_id = ?");
                     $tmp["latitude"] = $latitude;
                     $tmp["longitude"] = $longitude;
                     $tmp["image"] = $image;
+                    $tmp["outstanding"] = $outstanding;
                     array_push($data, $tmp);
                 }
                 $_meta = array();
@@ -370,10 +376,11 @@ longitude, image from product WHERE category_id = ?");
 
         $response = array();
         $stmt = $this->conn->prepare("SELECT product_id, description, price, brand_id, category_id, latitude, 
-longitude, image from product WHERE brand_id = ?");
+longitude, image, outstanding from product WHERE brand_id = ?");
         $stmt->bind_param("s", $id);
         if($stmt->execute()){
-            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude, $image);
+            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude,
+                $image, $outstanding);
             $stmt->store_result();
             if($stmt->num_rows>0){
                 $data = array();
@@ -387,6 +394,7 @@ longitude, image from product WHERE brand_id = ?");
                     $tmp["latitude"] = $latitude;
                     $tmp["longitude"] = $longitude;
                     $tmp["image"] = $image;
+                    $tmp["outstanding"] = $outstanding;
                     array_push($data, $tmp);
                 }
                 $_meta = array();
@@ -413,12 +421,14 @@ longitude, image from product WHERE brand_id = ?");
 
 
     // add Product
-    public function addProduct($description, $price, $brand_id, $category_id, $latitude, $longitude, $image) {
+    public function addProduct($description, $price, $brand_id, $category_id, $latitude, $longitude,
+                               $image, $outstanding) {
         $response = array();
 
         $stmt = $this->conn->prepare("INSERT INTO product(description, price, brand_id, category_id, 
-latitude, longitude, image) VALUES(?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssssss", $description, $price, $brand_id, $category_id, $latitude, $longitude, $image);
+latitude, longitude, image, outstanding) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssssss", $description, $price, $brand_id, $category_id, $latitude, $longitude,
+            $image, $outstanding);
         $result = $stmt->execute();
         $stmt->close();
 
@@ -595,6 +605,55 @@ latitude, longitude, image) VALUES(?, ?, ?, ?, ?, ?, ?)");
                     $tmp["description"] = $description;
                     $tmp["image"] = $image;
                     $tmp["state"] = $state;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
+            }
+        }else{
+            $meta = array();
+            $meta["status"] = "error";
+            $meta["code"] = "100";
+            $response["_meta"] = $meta;
+        }
+
+        return $response;
+    }
+
+
+    // All Products Outstanding
+    public function getAllProductsOutstanding() {
+
+        $response = array();
+        $stmt = $this->conn->prepare("SELECT product_id, description, price, brand_id, category_id, latitude, 
+longitude, image, outstanding from product ORDER BY product_id DESC");
+
+        if($stmt->execute()){
+            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude,
+                $image, $outstanding);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["product_id"] = $product_id;
+                    $tmp["description"] = $description;
+                    $tmp["price"] = $price;
+                    $tmp["brand_id"] = $brand_id;
+                    $tmp["category_id"] = $category_id;
+                    $tmp["latitude"] = $latitude;
+                    $tmp["longitude"] = $longitude;
+                    $tmp["image"] = $image;
                     array_push($data, $tmp);
                 }
                 $_meta = array();

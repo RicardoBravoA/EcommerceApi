@@ -114,7 +114,8 @@
     //Insert Product
     $app->post('/product/add', function() use ($app) {
 
-        verifyRequiredParams(array('description', 'price', 'brand_id', 'category_id', 'latitude', 'longitude', 'image'));
+        verifyRequiredParams(array('description', 'price', 'brand_id', 'category_id', 'latitude', 'longitude', 'image',
+            'outstanding'));
 
         $description = $app->request->post('description');
         $price = $app->request->post('price');
@@ -123,9 +124,11 @@
         $latitude = $app->request->post('latitude');
         $longitude = $app->request->post('longitude');
         $image = $app->request->post('image');
+        $outstanding = $app->request->post('outstanding');
 
         $db = new DbHandler();
-        $response = $db->addProduct($description, $price, $brand_id, $category_id, $latitude, $longitude, $image);
+        $response = $db->addProduct($description, $price, $brand_id, $category_id, $latitude, $longitude, $image,
+            $outstanding);
 
         echoResponse(200, $response);
     });
@@ -193,6 +196,15 @@
 
         $db = new DbHandler();
         $response = $db->getAllCoupon();
+        echoResponse(200, $response);
+    });
+
+
+    // Products outstanding 
+    $app->get('/product/outstanding', function() use ($app) {
+    
+        $db = new DbHandler();
+        $response = $db->getAllProductsOutstanding();
         echoResponse(200, $response);
     });
 
