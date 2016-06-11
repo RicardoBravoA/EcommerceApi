@@ -149,11 +149,26 @@
     });
 
 
-    // All Product
-    $app->get('/product/', function() use ($app) {
+    // All User
+    $app->get('/user/', function() use ($app) {
     
         $db = new DbHandler();
-        $response = $db->getAllProduct();
+        $response = $db->getAllUser();
+        echoResponse(200, $response);
+    });
+
+
+    //Login
+    $app->post('/user/login', function() use ($app) {
+
+        verifyRequiredParams(array('email', 'password'));
+
+        $email = $app->request->post('email');
+        $password = $app->request->post('password');
+
+        $db = new DbHandler();
+        $response = $db->login($email, $password);
+
         echoResponse(200, $response);
     });
 

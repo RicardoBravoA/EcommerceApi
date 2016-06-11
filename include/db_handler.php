@@ -464,6 +464,96 @@ latitude, longitude, image) VALUES(?, ?, ?, ?, ?, ?, ?)");
     }
 
 
+    // All User
+    public function getAllUser() {
+
+        $response = array();
+        $stmt = $this->conn->prepare("SELECT user_id, name, lastname, surename, email FROM user");
+
+        if($stmt->execute()){
+            $stmt->bind_result($user_id, $name, $lastname, $surename, $email);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["user_id"] = $user_id;
+                    $tmp["name"] = $name;
+                    $tmp["lastname"] = $lastname;
+                    $tmp["surename"] = $surename;
+                    $tmp["email"] = $email;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
+            }
+        }else{
+            $meta = array();
+            $meta["status"] = "error";
+            $meta["code"] = "100";
+            $response["_meta"] = $meta;
+        }
+
+        return $response;
+    }
+
+
+    // Login
+    public function login($email, $password) {
+
+        $response = array();
+        $stmt = $this->conn->prepare("SELECT user_id, name, lastname, surename, email FROM user WHERE email = ? AND 
+              password = MD5(?)");
+
+        $stmt->bind_param("ss", $email, $password);
+        if($stmt->execute()){
+            $stmt->bind_result($user_id, $name, $lastname, $surename, $email);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["user_id"] = $user_id;
+                    $tmp["name"] = $name;
+                    $tmp["lastname"] = $lastname;
+                    $tmp["surename"] = $surename;
+                    $tmp["email"] = $email;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
+            }
+        }else{
+            $meta = array();
+            $meta["status"] = "error";
+            $meta["code"] = "100";
+            $response["_meta"] = $meta;
+        }
+        return $response;
+
+    }
+
+
 
 }
 
