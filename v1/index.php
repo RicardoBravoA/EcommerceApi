@@ -173,6 +173,30 @@
     });
 
 
+    //Add Coupon
+    $app->post('/coupon/add', function() use ($app) {
+
+        verifyRequiredParams(array('description', 'image'));
+
+        $description = $app->request->post('description');
+        $image = $app->request->post('image');
+
+        $db = new DbHandler();
+        $response = $db->addCoupon($description, $image);
+
+        echoResponse(200, $response);
+    });
+
+
+    // All Coupon
+    $app->get('/coupon/', function() use ($app) {
+
+        $db = new DbHandler();
+        $response = $db->getAllCoupon();
+        echoResponse(200, $response);
+    });
+
+
 
     function echoResponse($status_code, $response) {
         $app = \Slim\Slim::getInstance();

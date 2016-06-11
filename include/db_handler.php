@@ -553,6 +553,72 @@ latitude, longitude, image) VALUES(?, ?, ?, ?, ?, ?, ?)");
 
     }
 
+    // add User
+    public function addCoupon($description, $image) {
+        $response = array();
+
+        $stmt = $this->conn->prepare("INSERT INTO coupon(description, image, state) VALUES(?, ?, true)");
+        $stmt->bind_param("ss", $description, $image);
+        $result = $stmt->execute();
+        $stmt->close();
+
+        if ($result) {
+            $meta = array();
+            $meta["status"] = "success";
+            $meta["code"] = "200";
+            $response["_meta"] = $meta;
+        } else {
+            $meta = array();
+            $meta["status"] = "error";
+            $meta["code"] = "100";
+            $response["_meta"] = $meta;
+        }
+
+        return $response;
+    }
+
+
+    // All Coupon
+    public function getAllCoupon() {
+
+        $response = array();
+        $stmt = $this->conn->prepare("SELECT coupon_id, description, image, state FROM coupon");
+
+        if($stmt->execute()){
+            $stmt->bind_result($coupon_id, $description, $image, $state);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["coupon_id"] = $coupon_id;
+                    $tmp["description"] = $description;
+                    $tmp["image"] = $image;
+                    $tmp["state"] = $state;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
+            }
+        }else{
+            $meta = array();
+            $meta["status"] = "error";
+            $meta["code"] = "100";
+            $response["_meta"] = $meta;
+        }
+
+        return $response;
+    }
 
 
 }
