@@ -16,34 +16,38 @@ class DbHandler {
 
         $response = array();
         $stmt = $this->conn->prepare("SELECT brand_id, description FROM brand");
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-        $data = array();
 
-        if($result->num_rows >0){
-
-            while ($dataQuery = $result->fetch_assoc()) {
-                $tmp = array();
-                $tmp["brand_id"] = $dataQuery['brand_id'];
-                $tmp["description"] = $dataQuery['description'];
-                array_push($data, $tmp);
+        if($stmt->execute()){
+            $stmt->bind_result($brand_id, $description);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["brand_id"] = $brand_id;
+                    $tmp["description"] = $description;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
             }
-
-
-            $meta = array();
-            $meta["status"] = "success";
-            $meta["code"] = "200";
-            $response["_meta"] = $meta;
-            $response["data"] = $data;
-
         }else{
             $meta = array();
             $meta["status"] = "error";
             $meta["code"] = "100";
-            $meta["message"] = "No existe información";
             $response["_meta"] = $meta;
         }
+
         return $response;
     }
 
@@ -66,7 +70,6 @@ class DbHandler {
             $meta = array();
             $meta["status"] = "error";
             $meta["code"] = "100";
-            $meta["message"] = "Error al registar Marca";
             $response["_meta"] = $meta;
         }
 
@@ -80,34 +83,38 @@ class DbHandler {
         $response = array();
         $stmt = $this->conn->prepare("SELECT brand_id, description FROM brand WHERE brand_id = ?");
         $stmt->bind_param("s", $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-        $data = array();
 
-        if($result->num_rows >0){
-
-            while ($dataQuery = $result->fetch_assoc()) {
-                $tmp = array();
-                $tmp["brand_id"] = $dataQuery['brand_id'];
-                $tmp["description"] = $dataQuery['description'];
-                array_push($data, $tmp);
+        if($stmt->execute()){
+            $stmt->bind_result($brand_id, $description);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["brand_id"] = $brand_id;
+                    $tmp["description"] = $description;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
             }
-
-
-            $meta = array();
-            $meta["status"] = "success";
-            $meta["code"] = "200";
-            $response["_meta"] = $meta;
-            $response["data"] = $data;
-
         }else{
             $meta = array();
             $meta["status"] = "error";
             $meta["code"] = "100";
-            $meta["message"] = "No existe información";
             $response["_meta"] = $meta;
         }
+
+
         return $response;
     }
 
@@ -117,34 +124,38 @@ class DbHandler {
 
         $response = array();
         $stmt = $this->conn->prepare("SELECT category_id, description FROM category");
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-        $data = array();
 
-        if($result->num_rows >0){
-
-            while ($dataQuery = $result->fetch_assoc()) {
-                $tmp = array();
-                $tmp["category_id"] = $dataQuery['category_id'];
-                $tmp["description"] = $dataQuery['description'];
-                array_push($data, $tmp);
+        if($stmt->execute()){
+            $stmt->bind_result($category_id, $description);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["category_id"] = $category_id;
+                    $tmp["description"] = $description;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
             }
-
-
-            $meta = array();
-            $meta["status"] = "success";
-            $meta["code"] = "200";
-            $response["_meta"] = $meta;
-            $response["data"] = $data;
-
         }else{
             $meta = array();
             $meta["status"] = "error";
             $meta["code"] = "100";
-            $meta["message"] = "No existe información";
             $response["_meta"] = $meta;
         }
+
         return $response;
     }
 
@@ -167,7 +178,6 @@ class DbHandler {
             $meta = array();
             $meta["status"] = "error";
             $meta["code"] = "100";
-            $meta["message"] = "Error al registar Categoria";
             $response["_meta"] = $meta;
         }
 
@@ -181,32 +191,34 @@ class DbHandler {
         $response = array();
         $stmt = $this->conn->prepare("SELECT category_id, description FROM category WHERE category_id = ?");
         $stmt->bind_param("s", $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-        $data = array();
-
-        if($result->num_rows >0){
-
-            while ($dataQuery = $result->fetch_assoc()) {
-                $tmp = array();
-                $tmp["category_id"] = $dataQuery['category_id'];
-                $tmp["description"] = $dataQuery['description'];
-                array_push($data, $tmp);
+        if($stmt->execute()){
+            $stmt->bind_result($category_id, $description);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["category_id"] = $category_id;
+                    $tmp["description"] = $description;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
             }
-
-
-            $meta = array();
-            $meta["status"] = "success";
-            $meta["code"] = "200";
-            $response["_meta"] = $meta;
-            $response["data"] = $data;
-
         }else{
             $meta = array();
             $meta["status"] = "error";
             $meta["code"] = "100";
-            $meta["message"] = "No existe información";
             $response["_meta"] = $meta;
         }
         return $response;
@@ -219,38 +231,41 @@ class DbHandler {
         $response = array();
         $stmt = $this->conn->prepare("SELECT product_id, description, price, brand_id, category_id, latitude, 
 longitude, image from product");
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-        $data = array();
 
-        if($result->num_rows >0){
-
-            while ($dataQuery = $result->fetch_assoc()) {
-                $tmp = array();
-                $tmp["product_id"] = $dataQuery['product_id'];
-                $tmp["description"] = $dataQuery['description'];
-                $tmp["price"] = $dataQuery['price'];
-                $tmp["brand_id"] = $dataQuery['brand_id'];
-                $tmp["category_id"] = $dataQuery['category_id'];
-                $tmp["latitude"] = $dataQuery['latitude'];
-                $tmp["longitude"] = $dataQuery['longitude'];
-                $tmp["image"] = $dataQuery['image'];
-                array_push($data, $tmp);
+        if($stmt->execute()){
+            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude, $image);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["product_id"] = $product_id;
+                    $tmp["description"] = $description;
+                    $tmp["price"] = $price;
+                    $tmp["brand_id"] = $brand_id;
+                    $tmp["category_id"] = $category_id;
+                    $tmp["latitude"] = $latitude;
+                    $tmp["longitude"] = $longitude;
+                    $tmp["image"] = $image;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
             }
-
-
-            $meta = array();
-            $meta["status"] = "success";
-            $meta["code"] = "200";
-            $response["_meta"] = $meta;
-            $response["data"] = $data;
-
         }else{
             $meta = array();
             $meta["status"] = "error";
             $meta["code"] = "100";
-            $meta["message"] = "No existe información";
             $response["_meta"] = $meta;
         }
         return $response;
@@ -264,38 +279,40 @@ longitude, image from product");
         $stmt = $this->conn->prepare("SELECT product_id, description, price, brand_id, category_id, latitude, 
 longitude, image from product WHERE product_id = ?");
         $stmt->bind_param("s", $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-        $data = array();
-
-        if($result->num_rows >0){
-
-            while ($dataQuery = $result->fetch_assoc()) {
-                $tmp = array();
-                $tmp["product_id"] = $dataQuery['product_id'];
-                $tmp["description"] = $dataQuery['description'];
-                $tmp["price"] = $dataQuery['price'];
-                $tmp["brand_id"] = $dataQuery['brand_id'];
-                $tmp["category_id"] = $dataQuery['category_id'];
-                $tmp["latitude"] = $dataQuery['latitude'];
-                $tmp["longitude"] = $dataQuery['longitude'];
-                $tmp["image"] = $dataQuery['image'];
-                array_push($data, $tmp);
+        if($stmt->execute()){
+            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude, $image);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["product_id"] = $product_id;
+                    $tmp["description"] = $description;
+                    $tmp["price"] = $price;
+                    $tmp["brand_id"] = $brand_id;
+                    $tmp["category_id"] = $category_id;
+                    $tmp["latitude"] = $latitude;
+                    $tmp["longitude"] = $longitude;
+                    $tmp["image"] = $image;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
             }
-
-
-            $meta = array();
-            $meta["status"] = "success";
-            $meta["code"] = "200";
-            $response["_meta"] = $meta;
-            $response["data"] = $data;
-
         }else{
             $meta = array();
             $meta["status"] = "error";
             $meta["code"] = "100";
-            $meta["message"] = "No existe información";
             $response["_meta"] = $meta;
         }
         return $response;
@@ -308,38 +325,40 @@ longitude, image from product WHERE product_id = ?");
         $stmt = $this->conn->prepare("SELECT product_id, description, price, brand_id, category_id, latitude, 
 longitude, image from product WHERE category_id = ?");
         $stmt->bind_param("s", $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-        $data = array();
-
-        if($result->num_rows >0){
-
-            while ($dataQuery = $result->fetch_assoc()) {
-                $tmp = array();
-                $tmp["product_id"] = $dataQuery['product_id'];
-                $tmp["description"] = $dataQuery['description'];
-                $tmp["price"] = $dataQuery['price'];
-                $tmp["brand_id"] = $dataQuery['brand_id'];
-                $tmp["category_id"] = $dataQuery['category_id'];
-                $tmp["latitude"] = $dataQuery['latitude'];
-                $tmp["longitude"] = $dataQuery['longitude'];
-                $tmp["image"] = $dataQuery['image'];
-                array_push($data, $tmp);
+        if($stmt->execute()){
+            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude, $image);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["product_id"] = $product_id;
+                    $tmp["description"] = $description;
+                    $tmp["price"] = $price;
+                    $tmp["brand_id"] = $brand_id;
+                    $tmp["category_id"] = $category_id;
+                    $tmp["latitude"] = $latitude;
+                    $tmp["longitude"] = $longitude;
+                    $tmp["image"] = $image;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
             }
-
-
-            $meta = array();
-            $meta["status"] = "success";
-            $meta["code"] = "200";
-            $response["_meta"] = $meta;
-            $response["data"] = $data;
-
         }else{
             $meta = array();
             $meta["status"] = "error";
             $meta["code"] = "100";
-            $meta["message"] = "No existe información";
             $response["_meta"] = $meta;
         }
         return $response;
@@ -353,38 +372,40 @@ longitude, image from product WHERE category_id = ?");
         $stmt = $this->conn->prepare("SELECT product_id, description, price, brand_id, category_id, latitude, 
 longitude, image from product WHERE brand_id = ?");
         $stmt->bind_param("s", $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-        $data = array();
-
-        if($result->num_rows >0){
-
-            while ($dataQuery = $result->fetch_assoc()) {
-                $tmp = array();
-                $tmp["product_id"] = $dataQuery['product_id'];
-                $tmp["description"] = $dataQuery['description'];
-                $tmp["price"] = $dataQuery['price'];
-                $tmp["brand_id"] = $dataQuery['brand_id'];
-                $tmp["category_id"] = $dataQuery['category_id'];
-                $tmp["latitude"] = $dataQuery['latitude'];
-                $tmp["longitude"] = $dataQuery['longitude'];
-                $tmp["image"] = $dataQuery['image'];
-                array_push($data, $tmp);
+        if($stmt->execute()){
+            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude, $image);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["product_id"] = $product_id;
+                    $tmp["description"] = $description;
+                    $tmp["price"] = $price;
+                    $tmp["brand_id"] = $brand_id;
+                    $tmp["category_id"] = $category_id;
+                    $tmp["latitude"] = $latitude;
+                    $tmp["longitude"] = $longitude;
+                    $tmp["image"] = $image;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
             }
-
-
-            $meta = array();
-            $meta["status"] = "success";
-            $meta["code"] = "200";
-            $response["_meta"] = $meta;
-            $response["data"] = $data;
-
         }else{
             $meta = array();
             $meta["status"] = "error";
             $meta["code"] = "100";
-            $meta["message"] = "No existe información";
             $response["_meta"] = $meta;
         }
         return $response;
@@ -416,6 +437,8 @@ latitude, longitude, image) VALUES(?, ?, ?, ?, ?, ?, ?)");
 
         return $response;
     }
+
+    
 
 
 }
