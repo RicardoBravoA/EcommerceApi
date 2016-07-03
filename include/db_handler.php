@@ -58,6 +58,8 @@ class DbHandler {
 
         $stmt = $this->conn->prepare("SELECT brand_id, description FROM brand");
 
+        $noData = array();
+
         if($stmt->execute()){
             $stmt->bind_result($brand_id, $description);
             $stmt->store_result();
@@ -72,10 +74,10 @@ class DbHandler {
                 $stmt->close();
                 return $data;
             }else{
-                return null;
+                return $noData;
             }
         }else{
-            return null;
+            return $noData;
         }
 
         return $response;
@@ -235,6 +237,8 @@ class DbHandler {
     // Category
     public function getCategory() {
 
+        $noData = array();
+
         $stmt = $this->conn->prepare("SELECT category_id, description FROM category");
 
         if($stmt->execute()){
@@ -251,10 +255,10 @@ class DbHandler {
                 $stmt->close();
                 return $data;
             }else{
-                return null;
+                return $noData;
             }
         }else{
-            return null;
+            return $noData;
         }
 
         return $response;
@@ -723,16 +727,7 @@ latitude, longitude, image, outstanding) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
 
         $brand = $this->getBrand();
 
-        if($brand==null){
-            return $response;
-        }
-
         $category = $this->getCategory();
-
-        if($category==null){
-            return $response;
-        }
-
 
         $_meta = array();
         $_meta["status"]="success";

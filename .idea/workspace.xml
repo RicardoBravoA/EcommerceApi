@@ -4,7 +4,6 @@
     <list default="true" id="6af8cf17-e787-431e-ac2e-affb36099858" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/db_handler.php" afterPath="$PROJECT_DIR$/include/db_handler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v1/index.php" afterPath="$PROJECT_DIR$/v1/index.php" />
     </list>
     <ignored path="apiEcommerce.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,30 +35,30 @@
       <file leaf-file-name="db_handler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/db_handler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="741" column="38" selection-start-line="741" selection-start-column="38" selection-end-line="741" selection-end-column="38" />
+            <state relative-caret-position="360">
+              <caret line="260" column="26" selection-start-line="260" selection-start-column="26" selection-end-line="260" selection-end-column="26" />
               <folding>
-                <marker date="1467589850000" expanded="true" signature="333:379" ph="SELECT brand... brand" />
-                <marker date="1467589850000" expanded="true" signature="1622:1661" ph="SELECT brand... brand" />
-                <marker date="1467589850000" expanded="true" signature="2456:2628" ph="SELECT DISTI... brand" />
-                <marker date="1467589850000" expanded="true" signature="3974:4023" ph="INSERT INTO brand... " />
-                <marker date="1467589850000" expanded="true" signature="4647:4712" ph="SELECT brand... brand" />
-                <marker date="1467589850000" expanded="true" signature="6003:6055" ph="SELECT categ... category" />
-                <marker date="1467589850000" expanded="true" signature="7312:7357" ph="SELECT brand... brand" />
-                <marker date="1467589850000" expanded="true" signature="8168:8175" ph="SELECT categ... category" />
-                <marker date="1467589850000" expanded="true" signature="8168:8358" ph="SELECT DISTI... category" />
-                <marker date="1467589850000" expanded="true" signature="9721:9773" ph="INSERT INTO category... " />
-                <marker date="1467589850000" expanded="true" signature="10403:10477" ph="SELECT categ... category" />
-                <marker date="1467589850000" expanded="true" signature="11805:11920" ph="SELECT produ... product" />
-                <marker date="1467589850000" expanded="true" signature="13612:13748" ph="SELECT produ... product" />
-                <marker date="1467589850000" expanded="true" signature="15492:15629" ph="SELECT produ... product" />
-                <marker date="1467589850000" expanded="true" signature="17368:17502" ph="SELECT produ... product" />
-                <marker date="1467589850000" expanded="true" signature="19338:19473" ph="INSERT INTO product... " />
-                <marker date="1467589850000" expanded="true" signature="20276:20362" ph="INSERT INTO user... " />
-                <marker date="1467589850000" expanded="true" signature="21003:21060" ph="SELECT user_... user" />
-                <marker date="1467589850000" expanded="true" signature="22444:22554" ph="SELECT user_... user" />
-                <marker date="1467589850000" expanded="true" signature="24727:24791" ph="INSERT INTO coupon... " />
-                <marker date="1467589850000" expanded="true" signature="25407:25462" ph="SELECT coupo... coupon" />
+                <marker date="1467590115000" expanded="true" signature="333:379" ph="SELECT brand... brand" />
+                <marker date="1467590115000" expanded="true" signature="1622:1661" ph="SELECT brand... brand" />
+                <marker date="1467590115000" expanded="true" signature="2490:2662" ph="SELECT DISTI... brand" />
+                <marker date="1467590115000" expanded="true" signature="4008:4057" ph="INSERT INTO brand... " />
+                <marker date="1467590115000" expanded="true" signature="4681:4746" ph="SELECT brand... brand" />
+                <marker date="1467590115000" expanded="true" signature="6037:6089" ph="SELECT categ... category" />
+                <marker date="1467590115000" expanded="true" signature="7374:7419" ph="SELECT brand... brand" />
+                <marker date="1467590115000" expanded="true" signature="8236:8243" ph="SELECT categ... category" />
+                <marker date="1467590115000" expanded="true" signature="8236:8426" ph="SELECT DISTI... category" />
+                <marker date="1467590115000" expanded="true" signature="9789:9841" ph="INSERT INTO category... " />
+                <marker date="1467590115000" expanded="true" signature="10471:10545" ph="SELECT categ... category" />
+                <marker date="1467590115000" expanded="true" signature="11873:11988" ph="SELECT produ... product" />
+                <marker date="1467590115000" expanded="true" signature="13680:13816" ph="SELECT produ... product" />
+                <marker date="1467590115000" expanded="true" signature="15560:15697" ph="SELECT produ... product" />
+                <marker date="1467590115000" expanded="true" signature="17436:17570" ph="SELECT produ... product" />
+                <marker date="1467590115000" expanded="true" signature="19406:19541" ph="INSERT INTO product... " />
+                <marker date="1467590115000" expanded="true" signature="20344:20430" ph="INSERT INTO user... " />
+                <marker date="1467590115000" expanded="true" signature="21071:21128" ph="SELECT user_... user" />
+                <marker date="1467590115000" expanded="true" signature="22512:22622" ph="SELECT user_... user" />
+                <marker date="1467590115000" expanded="true" signature="24657:24721" ph="INSERT INTO coupon... " />
+                <marker date="1467590115000" expanded="true" signature="25337:25392" ph="SELECT coupo... coupon" />
               </folding>
             </state>
           </provider>
@@ -243,12 +242,12 @@
       <updated>1464554423000</updated>
       <workItem from="1464554424964" duration="4460000" />
       <workItem from="1465602678797" duration="6543000" />
-      <workItem from="1467565572320" duration="4187000" />
+      <workItem from="1467565572320" duration="4406000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15190000" />
+    <option name="totallyTimeSpent" value="15409000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -288,27 +287,27 @@
         <state relative-caret-position="9570">
           <caret line="638" column="0" selection-start-line="638" selection-start-column="0" selection-end-line="638" selection-end-column="0" />
           <folding>
-            <marker date="1467589850000" expanded="true" signature="333:379" ph="SELECT brand... brand" />
-            <marker date="1467589850000" expanded="true" signature="1622:1661" ph="SELECT brand... brand" />
-            <marker date="1467589850000" expanded="true" signature="2456:2628" ph="SELECT DISTI... brand" />
-            <marker date="1467589850000" expanded="true" signature="3974:4023" ph="INSERT INTO brand... " />
-            <marker date="1467589850000" expanded="true" signature="4647:4712" ph="SELECT brand... brand" />
-            <marker date="1467589850000" expanded="true" signature="6003:6055" ph="SELECT categ... category" />
-            <marker date="1467589850000" expanded="true" signature="7312:7357" ph="SELECT brand... brand" />
-            <marker date="1467589850000" expanded="true" signature="8168:8175" ph="SELECT categ... category" />
-            <marker date="1467589850000" expanded="true" signature="8168:8358" ph="SELECT DISTI... category" />
-            <marker date="1467589850000" expanded="true" signature="9721:9773" ph="INSERT INTO category... " />
-            <marker date="1467589850000" expanded="true" signature="10403:10477" ph="SELECT categ... category" />
-            <marker date="1467589850000" expanded="true" signature="11805:11920" ph="SELECT produ... product" />
-            <marker date="1467589850000" expanded="true" signature="13612:13748" ph="SELECT produ... product" />
-            <marker date="1467589850000" expanded="true" signature="15492:15629" ph="SELECT produ... product" />
-            <marker date="1467589850000" expanded="true" signature="17368:17502" ph="SELECT produ... product" />
-            <marker date="1467589850000" expanded="true" signature="19338:19473" ph="INSERT INTO product... " />
-            <marker date="1467589850000" expanded="true" signature="20276:20362" ph="INSERT INTO user... " />
-            <marker date="1467589850000" expanded="true" signature="21003:21060" ph="SELECT user_... user" />
-            <marker date="1467589850000" expanded="true" signature="22444:22554" ph="SELECT user_... user" />
-            <marker date="1467589850000" expanded="true" signature="24727:24791" ph="INSERT INTO coupon... " />
-            <marker date="1467589850000" expanded="true" signature="25407:25462" ph="SELECT coupo... coupon" />
+            <marker date="1467590115000" expanded="true" signature="333:379" ph="SELECT brand... brand" />
+            <marker date="1467590115000" expanded="true" signature="1622:1661" ph="SELECT brand... brand" />
+            <marker date="1467590115000" expanded="true" signature="2490:2662" ph="SELECT DISTI... brand" />
+            <marker date="1467590115000" expanded="true" signature="4008:4057" ph="INSERT INTO brand... " />
+            <marker date="1467590115000" expanded="true" signature="4681:4746" ph="SELECT brand... brand" />
+            <marker date="1467590115000" expanded="true" signature="6037:6089" ph="SELECT categ... category" />
+            <marker date="1467590115000" expanded="true" signature="7374:7419" ph="SELECT brand... brand" />
+            <marker date="1467590115000" expanded="true" signature="8236:8243" ph="SELECT categ... category" />
+            <marker date="1467590115000" expanded="true" signature="8236:8426" ph="SELECT DISTI... category" />
+            <marker date="1467590115000" expanded="true" signature="9789:9841" ph="INSERT INTO category... " />
+            <marker date="1467590115000" expanded="true" signature="10471:10545" ph="SELECT categ... category" />
+            <marker date="1467590115000" expanded="true" signature="11873:11988" ph="SELECT produ... product" />
+            <marker date="1467590115000" expanded="true" signature="13680:13816" ph="SELECT produ... product" />
+            <marker date="1467590115000" expanded="true" signature="15560:15697" ph="SELECT produ... product" />
+            <marker date="1467590115000" expanded="true" signature="17436:17570" ph="SELECT produ... product" />
+            <marker date="1467590115000" expanded="true" signature="19406:19541" ph="INSERT INTO product... " />
+            <marker date="1467590115000" expanded="true" signature="20344:20430" ph="INSERT INTO user... " />
+            <marker date="1467590115000" expanded="true" signature="21071:21128" ph="SELECT user_... user" />
+            <marker date="1467590115000" expanded="true" signature="22512:22622" ph="SELECT user_... user" />
+            <marker date="1467590115000" expanded="true" signature="24657:24721" ph="INSERT INTO coupon... " />
+            <marker date="1467590115000" expanded="true" signature="25337:25392" ph="SELECT coupo... coupon" />
           </folding>
         </state>
       </provider>
@@ -334,27 +333,27 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1467589850000" expanded="true" signature="333:379" ph="SELECT brand... brand" />
-            <marker date="1467589850000" expanded="true" signature="1622:1661" ph="SELECT brand... brand" />
-            <marker date="1467589850000" expanded="true" signature="2456:2628" ph="SELECT DISTI... brand" />
-            <marker date="1467589850000" expanded="true" signature="3974:4023" ph="INSERT INTO brand... " />
-            <marker date="1467589850000" expanded="true" signature="4647:4712" ph="SELECT brand... brand" />
-            <marker date="1467589850000" expanded="true" signature="6003:6055" ph="SELECT categ... category" />
-            <marker date="1467589850000" expanded="true" signature="7312:7357" ph="SELECT brand... brand" />
-            <marker date="1467589850000" expanded="true" signature="8168:8175" ph="SELECT categ... category" />
-            <marker date="1467589850000" expanded="true" signature="8168:8358" ph="SELECT DISTI... category" />
-            <marker date="1467589850000" expanded="true" signature="9721:9773" ph="INSERT INTO category... " />
-            <marker date="1467589850000" expanded="true" signature="10403:10477" ph="SELECT categ... category" />
-            <marker date="1467589850000" expanded="true" signature="11805:11920" ph="SELECT produ... product" />
-            <marker date="1467589850000" expanded="true" signature="13612:13748" ph="SELECT produ... product" />
-            <marker date="1467589850000" expanded="true" signature="15492:15629" ph="SELECT produ... product" />
-            <marker date="1467589850000" expanded="true" signature="17368:17502" ph="SELECT produ... product" />
-            <marker date="1467589850000" expanded="true" signature="19338:19473" ph="INSERT INTO product... " />
-            <marker date="1467589850000" expanded="true" signature="20276:20362" ph="INSERT INTO user... " />
-            <marker date="1467589850000" expanded="true" signature="21003:21060" ph="SELECT user_... user" />
-            <marker date="1467589850000" expanded="true" signature="22444:22554" ph="SELECT user_... user" />
-            <marker date="1467589850000" expanded="true" signature="24727:24791" ph="INSERT INTO coupon... " />
-            <marker date="1467589850000" expanded="true" signature="25407:25462" ph="SELECT coupo... coupon" />
+            <marker date="1467590115000" expanded="true" signature="333:379" ph="SELECT brand... brand" />
+            <marker date="1467590115000" expanded="true" signature="1622:1661" ph="SELECT brand... brand" />
+            <marker date="1467590115000" expanded="true" signature="2490:2662" ph="SELECT DISTI... brand" />
+            <marker date="1467590115000" expanded="true" signature="4008:4057" ph="INSERT INTO brand... " />
+            <marker date="1467590115000" expanded="true" signature="4681:4746" ph="SELECT brand... brand" />
+            <marker date="1467590115000" expanded="true" signature="6037:6089" ph="SELECT categ... category" />
+            <marker date="1467590115000" expanded="true" signature="7374:7419" ph="SELECT brand... brand" />
+            <marker date="1467590115000" expanded="true" signature="8236:8243" ph="SELECT categ... category" />
+            <marker date="1467590115000" expanded="true" signature="8236:8426" ph="SELECT DISTI... category" />
+            <marker date="1467590115000" expanded="true" signature="9789:9841" ph="INSERT INTO category... " />
+            <marker date="1467590115000" expanded="true" signature="10471:10545" ph="SELECT categ... category" />
+            <marker date="1467590115000" expanded="true" signature="11873:11988" ph="SELECT produ... product" />
+            <marker date="1467590115000" expanded="true" signature="13680:13816" ph="SELECT produ... product" />
+            <marker date="1467590115000" expanded="true" signature="15560:15697" ph="SELECT produ... product" />
+            <marker date="1467590115000" expanded="true" signature="17436:17570" ph="SELECT produ... product" />
+            <marker date="1467590115000" expanded="true" signature="19406:19541" ph="INSERT INTO product... " />
+            <marker date="1467590115000" expanded="true" signature="20344:20430" ph="INSERT INTO user... " />
+            <marker date="1467590115000" expanded="true" signature="21071:21128" ph="SELECT user_... user" />
+            <marker date="1467590115000" expanded="true" signature="22512:22622" ph="SELECT user_... user" />
+            <marker date="1467590115000" expanded="true" signature="24657:24721" ph="INSERT INTO coupon... " />
+            <marker date="1467590115000" expanded="true" signature="25337:25392" ph="SELECT coupo... coupon" />
           </folding>
         </state>
       </provider>
@@ -417,30 +416,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/db_handler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="741" column="38" selection-start-line="741" selection-start-column="38" selection-end-line="741" selection-end-column="38" />
+        <state relative-caret-position="360">
+          <caret line="260" column="26" selection-start-line="260" selection-start-column="26" selection-end-line="260" selection-end-column="26" />
           <folding>
-            <marker date="1467589850000" expanded="true" signature="333:379" ph="SELECT brand... brand" />
-            <marker date="1467589850000" expanded="true" signature="1622:1661" ph="SELECT brand... brand" />
-            <marker date="1467589850000" expanded="true" signature="2456:2628" ph="SELECT DISTI... brand" />
-            <marker date="1467589850000" expanded="true" signature="3974:4023" ph="INSERT INTO brand... " />
-            <marker date="1467589850000" expanded="true" signature="4647:4712" ph="SELECT brand... brand" />
-            <marker date="1467589850000" expanded="true" signature="6003:6055" ph="SELECT categ... category" />
-            <marker date="1467589850000" expanded="true" signature="7312:7357" ph="SELECT brand... brand" />
-            <marker date="1467589850000" expanded="true" signature="8168:8175" ph="SELECT categ... category" />
-            <marker date="1467589850000" expanded="true" signature="8168:8358" ph="SELECT DISTI... category" />
-            <marker date="1467589850000" expanded="true" signature="9721:9773" ph="INSERT INTO category... " />
-            <marker date="1467589850000" expanded="true" signature="10403:10477" ph="SELECT categ... category" />
-            <marker date="1467589850000" expanded="true" signature="11805:11920" ph="SELECT produ... product" />
-            <marker date="1467589850000" expanded="true" signature="13612:13748" ph="SELECT produ... product" />
-            <marker date="1467589850000" expanded="true" signature="15492:15629" ph="SELECT produ... product" />
-            <marker date="1467589850000" expanded="true" signature="17368:17502" ph="SELECT produ... product" />
-            <marker date="1467589850000" expanded="true" signature="19338:19473" ph="INSERT INTO product... " />
-            <marker date="1467589850000" expanded="true" signature="20276:20362" ph="INSERT INTO user... " />
-            <marker date="1467589850000" expanded="true" signature="21003:21060" ph="SELECT user_... user" />
-            <marker date="1467589850000" expanded="true" signature="22444:22554" ph="SELECT user_... user" />
-            <marker date="1467589850000" expanded="true" signature="24727:24791" ph="INSERT INTO coupon... " />
-            <marker date="1467589850000" expanded="true" signature="25407:25462" ph="SELECT coupo... coupon" />
+            <marker date="1467590115000" expanded="true" signature="333:379" ph="SELECT brand... brand" />
+            <marker date="1467590115000" expanded="true" signature="1622:1661" ph="SELECT brand... brand" />
+            <marker date="1467590115000" expanded="true" signature="2490:2662" ph="SELECT DISTI... brand" />
+            <marker date="1467590115000" expanded="true" signature="4008:4057" ph="INSERT INTO brand... " />
+            <marker date="1467590115000" expanded="true" signature="4681:4746" ph="SELECT brand... brand" />
+            <marker date="1467590115000" expanded="true" signature="6037:6089" ph="SELECT categ... category" />
+            <marker date="1467590115000" expanded="true" signature="7374:7419" ph="SELECT brand... brand" />
+            <marker date="1467590115000" expanded="true" signature="8236:8243" ph="SELECT categ... category" />
+            <marker date="1467590115000" expanded="true" signature="8236:8426" ph="SELECT DISTI... category" />
+            <marker date="1467590115000" expanded="true" signature="9789:9841" ph="INSERT INTO category... " />
+            <marker date="1467590115000" expanded="true" signature="10471:10545" ph="SELECT categ... category" />
+            <marker date="1467590115000" expanded="true" signature="11873:11988" ph="SELECT produ... product" />
+            <marker date="1467590115000" expanded="true" signature="13680:13816" ph="SELECT produ... product" />
+            <marker date="1467590115000" expanded="true" signature="15560:15697" ph="SELECT produ... product" />
+            <marker date="1467590115000" expanded="true" signature="17436:17570" ph="SELECT produ... product" />
+            <marker date="1467590115000" expanded="true" signature="19406:19541" ph="INSERT INTO product... " />
+            <marker date="1467590115000" expanded="true" signature="20344:20430" ph="INSERT INTO user... " />
+            <marker date="1467590115000" expanded="true" signature="21071:21128" ph="SELECT user_... user" />
+            <marker date="1467590115000" expanded="true" signature="22512:22622" ph="SELECT user_... user" />
+            <marker date="1467590115000" expanded="true" signature="24657:24721" ph="INSERT INTO coupon... " />
+            <marker date="1467590115000" expanded="true" signature="25337:25392" ph="SELECT coupo... coupon" />
           </folding>
         </state>
       </provider>
