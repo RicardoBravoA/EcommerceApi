@@ -15,10 +15,10 @@ class DbHandler {
     public function getAllBrand() {
 
         $response = array();
-        $stmt = $this->conn->prepare("SELECT brand_id, description FROM brand");
+        $stmt = $this->conn->prepare("SELECT brand_id, description, image FROM brand");
 
         if($stmt->execute()){
-            $stmt->bind_result($brand_id, $description);
+            $stmt->bind_result($brand_id, $description, $image);
             $stmt->store_result();
             if($stmt->num_rows>0){
                 $data = array();
@@ -26,6 +26,51 @@ class DbHandler {
                     $tmp = array();
                     $tmp["brand_id"] = $brand_id;
                     $tmp["description"] = $description;
+                    $tmp["image"] = $image;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
+            }
+        }else{
+            $meta = array();
+            $meta["status"] = "error";
+            $meta["code"] = "100";
+            $response["_meta"] = $meta;
+        }
+
+        return $response;
+    }
+
+
+    // All Brand with products number
+    public function getBrandProduct() {
+
+        $response = array();
+        $stmt = $this->conn->prepare("SELECT DISTINCT b.brand_id, b.description, b.image, COUNT(p.brand_id) as total 
+            FROM brand b INNER JOIN product p ON b.brand_id = p.brand_id GROUP BY b.brand_id");
+
+        if($stmt->execute()){
+            $stmt->bind_result($brand_id, $description, $image, $total);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["brand_id"] = $brand_id;
+                    $tmp["description"] = $description;
+                    $tmp["image"] = $image;
+                    $tmp["total"] = $totalgit s;
                     array_push($data, $tmp);
                 }
                 $_meta = array();
@@ -53,11 +98,11 @@ class DbHandler {
 
 
     // add Brand
-    public function addBrand($description) {
+    public function addBrand($description, $image) {
         $response = array();
 
-        $stmt = $this->conn->prepare("INSERT INTO brand(description) VALUES(?)");
-        $stmt->bind_param("s", $description);
+        $stmt = $this->conn->prepare("INSERT INTO brand(description, image) VALUES(?,?)");
+        $stmt->bind_param("ss", $description, $image);
         $result = $stmt->execute();
         $stmt->close();
 
@@ -81,11 +126,11 @@ class DbHandler {
     public function getBrandById($id) {
 
         $response = array();
-        $stmt = $this->conn->prepare("SELECT brand_id, description FROM brand WHERE brand_id = ?");
+        $stmt = $this->conn->prepare("SELECT brand_id, description, image FROM brand WHERE brand_id = ?");
         $stmt->bind_param("s", $id);
 
         if($stmt->execute()){
-            $stmt->bind_result($brand_id, $description);
+            $stmt->bind_result($brand_id, $description, $image);
             $stmt->store_result();
             if($stmt->num_rows>0){
                 $data = array();
@@ -93,6 +138,7 @@ class DbHandler {
                     $tmp = array();
                     $tmp["brand_id"] = $brand_id;
                     $tmp["description"] = $description;
+                    $tmp["image"] = $image;
                     array_push($data, $tmp);
                 }
                 $_meta = array();
@@ -605,55 +651,6 @@ latitude, longitude, image, outstanding) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
                     $tmp["description"] = $description;
                     $tmp["image"] = $image;
                     $tmp["state"] = $state;
-                    array_push($data, $tmp);
-                }
-                $_meta = array();
-                $_meta["status"]="success";
-                $_meta["code"]="200";
-                $response["_meta"] = $_meta;
-                $response["data"] = $data;
-                $stmt->close();
-                return $response;
-            }else{
-                $meta = array();
-                $meta["status"] = "error";
-                $meta["code"] = "101";
-                $response["_meta"] = $meta;
-            }
-        }else{
-            $meta = array();
-            $meta["status"] = "error";
-            $meta["code"] = "100";
-            $response["_meta"] = $meta;
-        }
-
-        return $response;
-    }
-
-
-    // All Products Outstanding
-    public function getAllProductsOutstanding() {
-
-        $response = array();
-        $stmt = $this->conn->prepare("SELECT product_id, description, price, brand_id, category_id, latitude, 
-longitude, image, outstanding from product ORDER BY product_id DESC");
-
-        if($stmt->execute()){
-            $stmt->bind_result($product_id, $description, $price, $brand_id, $category_id, $latitude, $longitude,
-                $image, $outstanding);
-            $stmt->store_result();
-            if($stmt->num_rows>0){
-                $data = array();
-                while ($stmt->fetch()) {
-                    $tmp = array();
-                    $tmp["product_id"] = $product_id;
-                    $tmp["description"] = $description;
-                    $tmp["price"] = $price;
-                    $tmp["brand_id"] = $brand_id;
-                    $tmp["category_id"] = $category_id;
-                    $tmp["latitude"] = $latitude;
-                    $tmp["longitude"] = $longitude;
-                    $tmp["image"] = $image;
                     array_push($data, $tmp);
                 }
                 $_meta = array();

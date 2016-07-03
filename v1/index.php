@@ -19,6 +19,14 @@
         echoResponse(200, $response);
     });
 
+    // All Brand
+    $app->get('/brand/product/', function() use ($app) {
+
+        $db = new DbHandler();
+        $response = $db->getBrandProduct();
+        echoResponse(200, $response);
+    });
+
 
     // Brand by Id
     $app->get('/brand/:id', function($id) use ($app) {
@@ -32,12 +40,13 @@
     //Insert Brand
     $app->post('/brand/add', function() use ($app) {
 
-        verifyRequiredParams(array('description'));
+        verifyRequiredParams(array('description', 'image'));
 
         $description = $app->request->post('description');
+        $image = $app->request->post('image');
 
         $db = new DbHandler();
-        $response = $db->addBrand($description);
+        $response = $db->addBrand($description, $image);
 
         echoResponse(200, $response);
     });
@@ -198,16 +207,6 @@
         $response = $db->getAllCoupon();
         echoResponse(200, $response);
     });
-
-
-    // Products outstanding 
-    $app->get('/product/outstanding', function() use ($app) {
-    
-        $db = new DbHandler();
-        $response = $db->getAllProductsOutstanding();
-        echoResponse(200, $response);
-    });
-
 
 
     function echoResponse($status_code, $response) {

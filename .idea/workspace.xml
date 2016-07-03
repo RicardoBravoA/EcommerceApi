@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6af8cf17-e787-431e-ac2e-affb36099858" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/ecommerce_db.sql" afterPath="$PROJECT_DIR$/db/ecommerce_db.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/db_handler.php" afterPath="$PROJECT_DIR$/include/db_handler.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v1/index.php" afterPath="$PROJECT_DIR$/v1/index.php" />
     </list>
@@ -34,43 +33,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="db_handler.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="db_handler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/db_handler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="638" column="43" selection-start-line="638" selection-start-column="43" selection-end-line="638" selection-end-column="43" />
+            <state relative-caret-position="377">
+              <caret line="72" column="47" selection-start-line="72" selection-start-column="47" selection-end-line="72" selection-end-column="47" />
               <folding>
-                <marker date="1465613512000" expanded="true" signature="333:372" placeholder="SELECT brand... brand" />
-                <marker date="1465613512000" expanded="true" signature="1608:1648" placeholder="INSERT INTO brand... " />
-                <marker date="1465613512000" expanded="true" signature="2263:2321" placeholder="SELECT brand... brand" />
-                <marker date="1465613512000" expanded="true" signature="3560:3605" placeholder="SELECT categ... category" />
-                <marker date="1465613512000" expanded="true" signature="4856:4899" placeholder="INSERT INTO category... " />
-                <marker date="1465613512000" expanded="true" signature="5520:5587" placeholder="SELECT categ... category" />
-                <marker date="1465613512000" expanded="true" signature="6863:6978" placeholder="SELECT produ... product" />
-                <marker date="1465613512000" expanded="true" signature="8670:8806" placeholder="SELECT produ... product" />
-                <marker date="1465613512000" expanded="true" signature="10550:10687" placeholder="SELECT produ... product" />
-                <marker date="1465613512000" expanded="true" signature="12426:12560" placeholder="SELECT produ... product" />
-                <marker date="1465613512000" expanded="true" signature="14396:14531" placeholder="INSERT INTO product... " />
-                <marker date="1465613512000" expanded="true" signature="15334:15420" placeholder="INSERT INTO user... " />
-                <marker date="1465613512000" expanded="true" signature="16061:16118" placeholder="SELECT user_... user" />
-                <marker date="1465613512000" expanded="true" signature="17502:17559" placeholder="SELECT user_... user" />
-                <marker date="1465613512000" expanded="true" signature="17502:17612" placeholder="SELECT user_... user" />
-                <marker date="1465613512000" expanded="true" signature="19057:19121" placeholder="INSERT INTO user... " />
-                <marker date="1465613512000" expanded="true" signature="19737:19792" placeholder="SELECT coupo... coupon" />
-                <marker date="1465613512000" expanded="true" signature="21155:21162" placeholder="SELECT coupo... coupon" />
-                <marker date="1465613512000" expanded="true" signature="21155:21290" placeholder="SELECT produ... product" />
-                <marker date="1465613512000" expanded="true" signature="21155:21295" placeholder="SELECT produ... product" />
+                <marker date="1467566440000" expanded="true" signature="333:379" ph="SELECT brand... brand" />
+                <marker date="1467566440000" expanded="true" signature="1683:1855" ph="SELECT brand... brand" />
+                <marker date="1467566440000" expanded="true" signature="3208:3257" ph="INSERT INTO brand... " />
+                <marker date="1467566440000" expanded="true" signature="3881:3946" ph="SELECT brand... brand" />
+                <marker date="1467566440000" expanded="true" signature="5237:5282" ph="SELECT categ... category" />
+                <marker date="1467566440000" expanded="true" signature="6533:6576" ph="INSERT INTO category... " />
+                <marker date="1467566440000" expanded="true" signature="7197:7264" ph="SELECT categ... category" />
+                <marker date="1467566440000" expanded="true" signature="8540:8655" ph="SELECT produ... product" />
+                <marker date="1467566440000" expanded="true" signature="10347:10483" ph="SELECT produ... product" />
+                <marker date="1467566440000" expanded="true" signature="12227:12364" ph="SELECT produ... product" />
+                <marker date="1467566440000" expanded="true" signature="14103:14237" ph="SELECT produ... product" />
+                <marker date="1467566440000" expanded="true" signature="16073:16208" ph="INSERT INTO product... " />
+                <marker date="1467566440000" expanded="true" signature="17011:17097" ph="INSERT INTO user... " />
+                <marker date="1467566440000" expanded="true" signature="17738:17795" ph="SELECT user_... user" />
+                <marker date="1467566440000" expanded="true" signature="19179:19289" ph="SELECT user_... user" />
+                <marker date="1467566440000" expanded="true" signature="20734:20798" ph="INSERT INTO coupon... " />
+                <marker date="1467566440000" expanded="true" signature="21414:21469" ph="SELECT coupo... coupon" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ecommerce_db.sql" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/ecommerce_db.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="191" column="66" selection-start-line="191" selection-start-column="66" selection-end-line="191" selection-end-column="66" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -78,8 +64,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/v1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="206" column="48" selection-start-line="206" selection-start-column="48" selection-end-line="206" selection-end-column="48" />
+            <state relative-caret-position="270">
+              <caret line="25" column="40" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -94,22 +80,23 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/include/config.php" />
+        <option value="$PROJECT_DIR$/db/ecommerce_db.sql" />
         <option value="$PROJECT_DIR$/v1/index.php" />
         <option value="$PROJECT_DIR$/include/db_handler.php" />
-        <option value="$PROJECT_DIR$/db/ecommerce_db.sql" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="2560" />
-    <option name="height" value="1334" />
+    <option name="width" value="1280" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -136,6 +123,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -199,7 +187,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -252,23 +239,24 @@
       <updated>1464554423000</updated>
       <workItem from="1464554424964" duration="4460000" />
       <workItem from="1465602678797" duration="6543000" />
+      <workItem from="1467565572320" duration="481000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11003000" />
+    <option name="totallyTimeSpent" value="11484000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1334" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21763304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22132471" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32877815" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -291,29 +279,68 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/include/db_handler.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9570">
+          <caret line="638" column="0" selection-start-line="638" selection-start-column="0" selection-end-line="638" selection-end-column="0" />
+          <folding>
+            <marker date="1467566440000" expanded="true" signature="333:379" ph="SELECT brand... brand" />
+            <marker date="1467566440000" expanded="true" signature="1683:1855" ph="SELECT brand... brand" />
+            <marker date="1467566440000" expanded="true" signature="3208:3257" ph="INSERT INTO brand... " />
+            <marker date="1467566440000" expanded="true" signature="3881:3946" ph="SELECT brand... brand" />
+            <marker date="1467566440000" expanded="true" signature="5237:5282" ph="SELECT categ... category" />
+            <marker date="1467566440000" expanded="true" signature="6533:6576" ph="INSERT INTO category... " />
+            <marker date="1467566440000" expanded="true" signature="7197:7264" ph="SELECT categ... category" />
+            <marker date="1467566440000" expanded="true" signature="8540:8655" ph="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="10347:10483" ph="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="12227:12364" ph="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="14103:14237" ph="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="16073:16208" ph="INSERT INTO product... " />
+            <marker date="1467566440000" expanded="true" signature="17011:17097" ph="INSERT INTO user... " />
+            <marker date="1467566440000" expanded="true" signature="17738:17795" ph="SELECT user_... user" />
+            <marker date="1467566440000" expanded="true" signature="19179:19289" ph="SELECT user_... user" />
+            <marker date="1467566440000" expanded="true" signature="20734:20798" ph="INSERT INTO coupon... " />
+            <marker date="1467566440000" expanded="true" signature="21414:21469" ph="SELECT coupo... coupon" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/ecommerce_db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3090">
+          <caret line="206" column="35" selection-start-line="206" selection-start-column="35" selection-end-line="206" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/db_handler.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1465613512000" expanded="true" signature="333:372" placeholder="SELECT brand... brand" />
-            <marker date="1465613512000" expanded="true" signature="1608:1648" placeholder="INSERT INTO brand... " />
-            <marker date="1465613512000" expanded="true" signature="2263:2321" placeholder="SELECT brand... brand" />
-            <marker date="1465613512000" expanded="true" signature="3560:3605" placeholder="SELECT categ... category" />
-            <marker date="1465613512000" expanded="true" signature="4856:4899" placeholder="INSERT INTO category... " />
-            <marker date="1465613512000" expanded="true" signature="5520:5587" placeholder="SELECT categ... category" />
-            <marker date="1465613512000" expanded="true" signature="6863:6978" placeholder="SELECT produ... product" />
-            <marker date="1465613512000" expanded="true" signature="8670:8806" placeholder="SELECT produ... product" />
-            <marker date="1465613512000" expanded="true" signature="10550:10687" placeholder="SELECT produ... product" />
-            <marker date="1465613512000" expanded="true" signature="12426:12560" placeholder="SELECT produ... product" />
-            <marker date="1465613512000" expanded="true" signature="14396:14531" placeholder="INSERT INTO product... " />
-            <marker date="1465613512000" expanded="true" signature="15334:15420" placeholder="INSERT INTO user... " />
-            <marker date="1465613512000" expanded="true" signature="16061:16118" placeholder="SELECT user_... user" />
-            <marker date="1465613512000" expanded="true" signature="17502:17559" placeholder="SELECT user_... user" />
-            <marker date="1465613512000" expanded="true" signature="17502:17612" placeholder="SELECT user_... user" />
-            <marker date="1465613512000" expanded="true" signature="19057:19121" placeholder="INSERT INTO user... " />
-            <marker date="1465613512000" expanded="true" signature="19737:19792" placeholder="SELECT coupo... coupon" />
-            <marker date="1465613512000" expanded="true" signature="21155:21162" placeholder="SELECT coupo... coupon" />
-            <marker date="1465613512000" expanded="true" signature="21155:21290" placeholder="SELECT produ... product" />
-            <marker date="1465613512000" expanded="true" signature="21155:21295" placeholder="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="333:379" ph="SELECT brand... brand" />
+            <marker date="1467566440000" expanded="true" signature="1683:1855" ph="SELECT brand... brand" />
+            <marker date="1467566440000" expanded="true" signature="3208:3257" ph="INSERT INTO brand... " />
+            <marker date="1467566440000" expanded="true" signature="3881:3946" ph="SELECT brand... brand" />
+            <marker date="1467566440000" expanded="true" signature="5237:5282" ph="SELECT categ... category" />
+            <marker date="1467566440000" expanded="true" signature="6533:6576" ph="INSERT INTO category... " />
+            <marker date="1467566440000" expanded="true" signature="7197:7264" ph="SELECT categ... category" />
+            <marker date="1467566440000" expanded="true" signature="8540:8655" ph="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="10347:10483" ph="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="12227:12364" ph="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="14103:14237" ph="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="16073:16208" ph="INSERT INTO product... " />
+            <marker date="1467566440000" expanded="true" signature="17011:17097" ph="INSERT INTO user... " />
+            <marker date="1467566440000" expanded="true" signature="17738:17795" ph="SELECT user_... user" />
+            <marker date="1467566440000" expanded="true" signature="19179:19289" ph="SELECT user_... user" />
+            <marker date="1467566440000" expanded="true" signature="20734:20798" ph="INSERT INTO coupon... " />
+            <marker date="1467566440000" expanded="true" signature="21414:21469" ph="SELECT coupo... coupon" />
           </folding>
         </state>
       </provider>
@@ -358,48 +385,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/ecommerce_db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="191" column="66" selection-start-line="191" selection-start-column="66" selection-end-line="191" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/v1/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="206" column="48" selection-start-line="206" selection-start-column="48" selection-end-line="206" selection-end-column="48" />
+        <state relative-caret-position="270">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/db_handler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="638" column="43" selection-start-line="638" selection-start-column="43" selection-end-line="638" selection-end-column="43" />
+        <state relative-caret-position="377">
+          <caret line="72" column="47" selection-start-line="72" selection-start-column="47" selection-end-line="72" selection-end-column="47" />
           <folding>
-            <marker date="1465613512000" expanded="true" signature="333:372" placeholder="SELECT brand... brand" />
-            <marker date="1465613512000" expanded="true" signature="1608:1648" placeholder="INSERT INTO brand... " />
-            <marker date="1465613512000" expanded="true" signature="2263:2321" placeholder="SELECT brand... brand" />
-            <marker date="1465613512000" expanded="true" signature="3560:3605" placeholder="SELECT categ... category" />
-            <marker date="1465613512000" expanded="true" signature="4856:4899" placeholder="INSERT INTO category... " />
-            <marker date="1465613512000" expanded="true" signature="5520:5587" placeholder="SELECT categ... category" />
-            <marker date="1465613512000" expanded="true" signature="6863:6978" placeholder="SELECT produ... product" />
-            <marker date="1465613512000" expanded="true" signature="8670:8806" placeholder="SELECT produ... product" />
-            <marker date="1465613512000" expanded="true" signature="10550:10687" placeholder="SELECT produ... product" />
-            <marker date="1465613512000" expanded="true" signature="12426:12560" placeholder="SELECT produ... product" />
-            <marker date="1465613512000" expanded="true" signature="14396:14531" placeholder="INSERT INTO product... " />
-            <marker date="1465613512000" expanded="true" signature="15334:15420" placeholder="INSERT INTO user... " />
-            <marker date="1465613512000" expanded="true" signature="16061:16118" placeholder="SELECT user_... user" />
-            <marker date="1465613512000" expanded="true" signature="17502:17559" placeholder="SELECT user_... user" />
-            <marker date="1465613512000" expanded="true" signature="17502:17612" placeholder="SELECT user_... user" />
-            <marker date="1465613512000" expanded="true" signature="19057:19121" placeholder="INSERT INTO user... " />
-            <marker date="1465613512000" expanded="true" signature="19737:19792" placeholder="SELECT coupo... coupon" />
-            <marker date="1465613512000" expanded="true" signature="21155:21162" placeholder="SELECT coupo... coupon" />
-            <marker date="1465613512000" expanded="true" signature="21155:21290" placeholder="SELECT produ... product" />
-            <marker date="1465613512000" expanded="true" signature="21155:21295" placeholder="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="333:379" ph="SELECT brand... brand" />
+            <marker date="1467566440000" expanded="true" signature="1683:1855" ph="SELECT brand... brand" />
+            <marker date="1467566440000" expanded="true" signature="3208:3257" ph="INSERT INTO brand... " />
+            <marker date="1467566440000" expanded="true" signature="3881:3946" ph="SELECT brand... brand" />
+            <marker date="1467566440000" expanded="true" signature="5237:5282" ph="SELECT categ... category" />
+            <marker date="1467566440000" expanded="true" signature="6533:6576" ph="INSERT INTO category... " />
+            <marker date="1467566440000" expanded="true" signature="7197:7264" ph="SELECT categ... category" />
+            <marker date="1467566440000" expanded="true" signature="8540:8655" ph="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="10347:10483" ph="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="12227:12364" ph="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="14103:14237" ph="SELECT produ... product" />
+            <marker date="1467566440000" expanded="true" signature="16073:16208" ph="INSERT INTO product... " />
+            <marker date="1467566440000" expanded="true" signature="17011:17097" ph="INSERT INTO user... " />
+            <marker date="1467566440000" expanded="true" signature="17738:17795" ph="SELECT user_... user" />
+            <marker date="1467566440000" expanded="true" signature="19179:19289" ph="SELECT user_... user" />
+            <marker date="1467566440000" expanded="true" signature="20734:20798" ph="INSERT INTO coupon... " />
+            <marker date="1467566440000" expanded="true" signature="21414:21469" ph="SELECT coupo... coupon" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/ecommerce_db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="191" column="66" selection-start-line="191" selection-start-column="66" selection-end-line="191" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
