@@ -55,11 +55,9 @@ class DbHandler {
 
     // All Brand with products number
     public function getBrandProduct() {
-
         $response = array();
         $stmt = $this->conn->prepare("SELECT DISTINCT b.brand_id, b.description, b.image, COUNT(p.brand_id) as total 
             FROM brand b INNER JOIN product p ON b.brand_id = p.brand_id GROUP BY b.brand_id");
-
         if($stmt->execute()){
             $stmt->bind_result($brand_id, $description, $image, $total);
             $stmt->store_result();
@@ -70,7 +68,7 @@ class DbHandler {
                     $tmp["brand_id"] = $brand_id;
                     $tmp["description"] = $description;
                     $tmp["image"] = $image;
-                    $tmp["total"] = $totalgit s;
+                    $tmp["total"] = $total;
                     array_push($data, $tmp);
                 }
                 $_meta = array();
@@ -92,7 +90,6 @@ class DbHandler {
             $meta["code"] = "100";
             $response["_meta"] = $meta;
         }
-
         return $response;
     }
 
@@ -169,10 +166,10 @@ class DbHandler {
     public function getAllCategory() {
 
         $response = array();
-        $stmt = $this->conn->prepare("SELECT category_id, description FROM category");
+        $stmt = $this->conn->prepare("SELECT category_id, description, image FROM category");
 
         if($stmt->execute()){
-            $stmt->bind_result($category_id, $description);
+            $stmt->bind_result($category_id, $description, $image);
             $stmt->store_result();
             if($stmt->num_rows>0){
                 $data = array();
@@ -180,6 +177,51 @@ class DbHandler {
                     $tmp = array();
                     $tmp["category_id"] = $category_id;
                     $tmp["description"] = $description;
+                    $tmp["image"] = $image;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
+            }
+        }else{
+            $meta = array();
+            $meta["status"] = "error";
+            $meta["code"] = "100";
+            $response["_meta"] = $meta;
+        }
+
+        return $response;
+    }
+
+
+    // All Category with number products
+    public function getCategoryProduct() {
+
+        $response = array();
+        $stmt = $this->conn->prepare("SELECT DISTINCT c.category_id, c.description, c.image, COUNT(c.category_id) as total 
+            FROM category c INNER JOIN product p ON c.category_id = p.category_id GROUP BY c.category_id");
+
+        if($stmt->execute()){
+            $stmt->bind_result($category_id, $description, $image, $total);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["category_id"] = $category_id;
+                    $tmp["description"] = $description;
+                    $tmp["image"] = $image;
+                    $tmp["total"] = $total;
                     array_push($data, $tmp);
                 }
                 $_meta = array();
@@ -207,11 +249,11 @@ class DbHandler {
 
 
     // add Category
-    public function addCategory($description) {
+    public function addCategory($description, $image) {
         $response = array();
 
-        $stmt = $this->conn->prepare("INSERT INTO category(description) VALUES(?)");
-        $stmt->bind_param("s", $description);
+        $stmt = $this->conn->prepare("INSERT INTO category(description, image) VALUES(?,?)");
+        $stmt->bind_param("ss", $description, $image);
         $result = $stmt->execute();
         $stmt->close();
 
@@ -235,10 +277,10 @@ class DbHandler {
     public function getCategoryById($id) {
 
         $response = array();
-        $stmt = $this->conn->prepare("SELECT category_id, description FROM category WHERE category_id = ?");
+        $stmt = $this->conn->prepare("SELECT category_id, description, image FROM category WHERE category_id = ?");
         $stmt->bind_param("s", $id);
         if($stmt->execute()){
-            $stmt->bind_result($category_id, $description);
+            $stmt->bind_result($category_id, $description, $image);
             $stmt->store_result();
             if($stmt->num_rows>0){
                 $data = array();
@@ -246,6 +288,7 @@ class DbHandler {
                     $tmp = array();
                     $tmp["category_id"] = $category_id;
                     $tmp["description"] = $description;
+                    $tmp["image"] = $image;
                     array_push($data, $tmp);
                 }
                 $_meta = array();

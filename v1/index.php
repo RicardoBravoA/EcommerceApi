@@ -19,7 +19,7 @@
         echoResponse(200, $response);
     });
 
-    // All Brand
+    // Number product by Brand
     $app->get('/brand/product/', function() use ($app) {
 
         $db = new DbHandler();
@@ -60,16 +60,25 @@
         echoResponse(200, $response);
     });
 
+    // Number product by category
+    $app->get('/category/product/', function() use ($app) {
+
+        $db = new DbHandler();
+        $response = $db->getCategoryProduct();
+        echoResponse(200, $response);
+    });
+
 
     // Insert Category
     $app->post('/category/add', function() use ($app) {
 
-        verifyRequiredParams(array('description'));
+        verifyRequiredParams(array('description', 'image'));
 
         $description = $app->request->post('description');
+        $image = $app->request->post('image');
 
         $db = new DbHandler();
-        $response = $db->addCategory($description);
+        $response = $db->addCategory($description, $image);
         echoResponse(200, $response);
     });
 
