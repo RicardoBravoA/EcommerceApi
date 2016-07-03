@@ -53,6 +53,35 @@ class DbHandler {
     }
 
 
+    // Brand
+    public function getBrand() {
+
+        $stmt = $this->conn->prepare("SELECT brand_id, description FROM brand");
+
+        if($stmt->execute()){
+            $stmt->bind_result($brand_id, $description);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["brand_id"] = $brand_id;
+                    $tmp["description"] = $description;
+                    array_push($data, $tmp);
+                }
+                $stmt->close();
+                return $data;
+            }else{
+                return null;
+            }
+        }else{
+            return null;
+        }
+
+        return $response;
+    }
+
+
     // All Brand with products number
     public function getBrandProduct() {
         $response = array();
@@ -198,6 +227,34 @@ class DbHandler {
             $meta["status"] = "error";
             $meta["code"] = "100";
             $response["_meta"] = $meta;
+        }
+
+        return $response;
+    }
+
+    // Category
+    public function getCategory() {
+
+        $stmt = $this->conn->prepare("SELECT category_id, description FROM category");
+
+        if($stmt->execute()){
+            $stmt->bind_result($category_id, $description);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["category_id"] = $category_id;
+                    $tmp["description"] = $description;
+                    array_push($data, $tmp);
+                }
+                $stmt->close();
+                return $data;
+            }else{
+                return null;
+            }
+        }else{
+            return null;
         }
 
         return $response;
@@ -650,6 +707,42 @@ latitude, longitude, image, outstanding) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
         }
         return $response;
 
+    }
+
+
+    // All Filter
+    public function getAllFilter() {
+
+        $response = array();
+        $data = array();
+
+        $meta = array();
+        $meta["status"] = "error";
+        $meta["code"] = "101";
+        $response["_meta"] = $meta;
+
+        $brand = $this->getBrand();
+
+        if($brand==null){
+            return $response;
+        }
+
+        $category = $this->getCategory();
+
+        if($category==null){
+            return $response;
+        }
+
+
+        $_meta = array();
+        $_meta["status"]="success";
+        $_meta["code"]="200";
+        $response["_meta"] = $_meta;
+        $data["brand"] = $brand;
+        $data["category"] = $category;
+        $response["data"] = $data;
+
+        return $response;
     }
 
     // add User

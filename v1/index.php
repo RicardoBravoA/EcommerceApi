@@ -194,6 +194,15 @@
     });
 
 
+    // All Filters
+    $app->get('/filter/', function() use ($app) {
+
+        $db = new DbHandler();
+        $response = $db->getAllFilter();
+        echoResponse(200, $response);
+    });
+
+
     //Add Coupon
     $app->post('/coupon/add', function() use ($app) {
 
