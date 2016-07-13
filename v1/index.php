@@ -193,10 +193,9 @@
         echoResponse(200, $response);
     });
 
-
-    // All Filters
+    // All Filters v2
     $app->get('/filter/', function() use ($app) {
-
+    
         $db = new DbHandler();
         $response = $db->getAllFilter();
         echoResponse(200, $response);

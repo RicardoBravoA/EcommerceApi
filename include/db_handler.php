@@ -265,6 +265,38 @@ class DbHandler {
     }
 
 
+    //Category By Id
+    public function getCategoryByBrandId($id) {
+
+        $noData = array();
+
+        $stmt = $this->conn->prepare("SELECT DISTINCT p.category_id, c.description FROM product p 
+              INNER JOIN category c on p.category_id = c.category_id WHERE p.brand_id = $id");
+
+        if($stmt->execute()){
+            $stmt->bind_result($category_id, $description);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["category_id"] = $category_id;
+                    $tmp["description"] = $description;
+                    array_push($data, $tmp);
+                }
+                $stmt->close();
+                return $data;
+            }else{
+                return $noData;
+            }
+        }else{
+            return $noData;
+        }
+
+        return $response;
+    }
+
+
     // All Category with number products
     public function getCategoryProduct() {
 
@@ -715,7 +747,7 @@ latitude, longitude, image, outstanding) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
 
 
     // All Filter
-    public function getAllFilter() {
+    public function getAllFilterv1() {
 
         $response = array();
         $data = array();
@@ -736,6 +768,50 @@ latitude, longitude, image, outstanding) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
         $data["brand"] = $brand;
         $data["category"] = $category;
         $response["data"] = $data;
+
+        return $response;
+    }
+
+
+    // All Filter
+    public function getAllFilter() {
+
+        $response = array();
+        $stmt = $this->conn->prepare("SELECT DISTINCT p.brand_id, b.description FROM product p 
+            INNER JOIN brand b on p.brand_id = b.brand_id");
+
+        if($stmt->execute()){
+            $stmt->bind_result($brand_id, $description);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["brand_id"] = $brand_id;
+                    $tmp["description"] = $description;
+                    $category = $this->getCategoryByBrandId($brand_id);
+                    $tmp["category"] = $category;
+                    array_push($data, $tmp);
+                }
+                $_meta = array();
+                $_meta["status"]="success";
+                $_meta["code"]="200";
+                $response["_meta"] = $_meta;
+                $response["data"] = $data;
+                $stmt->close();
+                return $response;
+            }else{
+                $meta = array();
+                $meta["status"] = "error";
+                $meta["code"] = "101";
+                $response["_meta"] = $meta;
+            }
+        }else{
+            $meta = array();
+            $meta["status"] = "error";
+            $meta["code"] = "100";
+            $response["_meta"] = $meta;
+        }
 
         return $response;
     }
