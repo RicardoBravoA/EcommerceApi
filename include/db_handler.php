@@ -84,6 +84,38 @@ class DbHandler {
     }
 
 
+    // Brand of Product
+    public function getBrandOfProduct() {
+
+        $stmt = $this->conn->prepare("SELECT DISTINCT p.brand_id, b.description FROM product p 
+            INNER JOIN brand b on p.brand_id = b.brand_id");
+
+        $noData = array();
+
+        if($stmt->execute()){
+            $stmt->bind_result($brand_id, $description);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["brand_id"] = $brand_id;
+                    $tmp["description"] = $description;
+                    array_push($data, $tmp);
+                }
+                $stmt->close();
+                return $data;
+            }else{
+                return $noData;
+            }
+        }else{
+            return $noData;
+        }
+
+        return $response;
+    }
+
+
     // All Brand with products number
     public function getBrandProduct() {
         $response = array();
@@ -240,6 +272,38 @@ class DbHandler {
         $noData = array();
 
         $stmt = $this->conn->prepare("SELECT category_id, description FROM category");
+
+        if($stmt->execute()){
+            $stmt->bind_result($category_id, $description);
+            $stmt->store_result();
+            if($stmt->num_rows>0){
+                $data = array();
+                while ($stmt->fetch()) {
+                    $tmp = array();
+                    $tmp["category_id"] = $category_id;
+                    $tmp["description"] = $description;
+                    array_push($data, $tmp);
+                }
+                $stmt->close();
+                return $data;
+            }else{
+                return $noData;
+            }
+        }else{
+            return $noData;
+        }
+
+        return $response;
+    }
+
+
+    // Category of Product
+    public function getCategoryOfProduct() {
+
+        $stmt = $this->conn->prepare("SELECT DISTINCT p.category_id, c.description FROM product p 
+            INNER JOIN category c on p.category_id = c.category_id");
+
+        $noData = array();
 
         if($stmt->execute()){
             $stmt->bind_result($category_id, $description);
@@ -773,6 +837,7 @@ latitude, longitude, image, outstanding) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
     }
 
 
+
     // All Filter
     public function getAllFilter() {
 
@@ -798,6 +863,8 @@ latitude, longitude, image, outstanding) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
                 $_meta["code"]="200";
                 $response["_meta"] = $_meta;
                 $response["data"] = $data;
+                $response["brand"] = $this->getBrandOfProduct();
+                $response["category"] = $this->getCategoryOfProduct();
                 $stmt->close();
                 return $response;
             }else{
