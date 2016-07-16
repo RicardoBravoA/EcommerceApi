@@ -88,7 +88,7 @@ class DbHandler {
     public function getBrandOfProduct() {
 
         $stmt = $this->conn->prepare("SELECT DISTINCT p.brand_id, b.description FROM product p 
-            INNER JOIN brand b on p.brand_id = b.brand_id");
+            INNER JOIN brand b on p.brand_id = b.brand_id ORDER BY b.description");
 
         $noData = array();
 
@@ -301,7 +301,7 @@ class DbHandler {
     public function getCategoryOfProduct() {
 
         $stmt = $this->conn->prepare("SELECT DISTINCT p.category_id, c.description FROM product p 
-            INNER JOIN category c on p.category_id = c.category_id");
+            INNER JOIN category c on p.category_id = c.category_id ORDER BY c.description");
 
         $noData = array();
 
@@ -335,7 +335,7 @@ class DbHandler {
         $noData = array();
 
         $stmt = $this->conn->prepare("SELECT DISTINCT p.category_id, c.description FROM product p 
-              INNER JOIN category c on p.category_id = c.category_id WHERE p.brand_id = $id");
+              INNER JOIN category c on p.category_id = c.category_id WHERE p.brand_id = $id ORDER BY c.description");
 
         if($stmt->execute()){
             $stmt->bind_result($category_id, $description);
@@ -843,7 +843,7 @@ latitude, longitude, image, outstanding) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
 
         $response = array();
         $stmt = $this->conn->prepare("SELECT DISTINCT p.brand_id, b.description FROM product p 
-            INNER JOIN brand b on p.brand_id = b.brand_id");
+            INNER JOIN brand b on p.brand_id = b.brand_id ORDER BY b.description");
 
         if($stmt->execute()){
             $stmt->bind_result($brand_id, $description);
